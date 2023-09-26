@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圖文功能選單</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .wrap {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background-color: #7bf;
+        }
+
+        .item {
+            width: 25%;
+            position: relative;
+        }
+
+        .item img {
+            width: 100%;
+            /* 為了消除照片下方的空白 */
+            vertical-align: middle;
+        }
+
+        .item .txt {
+            /* 把位置釘在圖片上 */
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 20px;
+            background-color: rgb(0, 0, 0, .6);
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity .5s;
+        }
+        .item:hover .txt{
+            opacity: 1;
+        }
+        .item h2 {
+            font-size: 24px;
+            color: #F9F871;
+            font-weight: 500;
+        }
+        .item h2::after{
+            content: '';
+            display: block;
+            width: 0%;
+            height: 2px;
+            margin: 10px 0;
+            background-color: #F9F871;
+            transition: width .5s .5s;
+        }
+        .item:hover h2::after{
+            width: 100%;
+        }
+        .item p {
+            font-size: 16px;
+            color: #fff;
+            font-weight: 100;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="item">
+            <img src="https://picsum.photos/500/400/?random=2">
+            <div class="txt">
+                <h2>
+                    網頁設計的藝術：互動圖文卡片
+                </h2>
+                <p>探索互動設計的無限可能，讓你的網站獨具一格</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/400/?random=10">
+            <div class="txt">
+                <h2>
+                    超越視覺的魅力：動態圖卡展示
+                </h2>
+                <p>動態圖卡不僅吸引眼球，更提升用戶體驗</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/400/?random=9">
+            <div class="txt">
+                <h2>
+                    簡單易懂的巧思：圖文卡片設計
+                </h2>
+                <p>優秀的圖文卡片設計讓信息傳遞更直接</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/400/?random=7">
+            <div class="txt">
+                <h2>
+                    互動設計的力量：網頁圖文卡片
+                </h2>
+                <p>透過互動設計，讓你的網站充滿活力和創意</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
