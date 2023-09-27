@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人員介紹卡片</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            background-color: #7bf;
+        }
+
+        .wrap {
+            width: 1200px;
+            display: flex;
+            margin: auto;
+        }
+
+        .item {
+            width: 368px;
+            margin: 15px;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #000000;
+            transform: translateY(0px);
+            transition: 0.5s;
+        }
+
+        .item img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        .item h2 {
+            border-bottom: 1px solid #888;
+            padding-bottom: .3em;
+            margin-bottom: .3em;
+            font-weight: 900;
+            transition: .25s
+        }
+
+        .item p {
+            line-height: 1.6;
+            font-weight: 300;
+            transition: .25s
+        }
+
+        .item .txt {
+            padding: 20px;
+            position: relative;
+            height: calc(100% - 408px);
+        }
+
+        .item .txt:before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            left: 0;
+            top: 0;
+            border-top: 50px solid transparent;
+            border-left: 184px solid #fff;
+            border-right: 184px solid #fff;
+            transform: translateY(-100%);
+        }
+
+        .item:hover {
+            transform: translateY(-50px);
+        }
+        .item:hover .txt {
+            background-image: linear-gradient(0deg, #FB8076, #FEB85D)
+        }
+        .item:hover .txt:before {
+            border-left: 184px solid #FEB85D;
+            border-right: 184px solid #FEB85D;
+        }
+        .item:hover h2 {
+            color: #fff;
+        }
+        .item:hover p {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="item">
+            <img src="https://picsum.photos/300/300/?random=10">
+            <div class="txt">
+                <h2>凌俊豪</h2>
+                <p>凌俊豪是我們團隊的前端開發工程師，擅長使用React和Vue建立高效能的使用者介面。他也是一個熱衷於學習新技術和分享知識的人</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/300/300/?random=20">
+            <div class="txt">
+                <h2>Antonio</h2>
+                <p>Antonio 是我們團隊的 UI/UX 設計師。他擁有出色的設計感和對使用者體驗的深刻理解，能夠創造出欣賞和吸引人的設計</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/300/300/?random=30">
+            <div class="txt">
+                <h2>豪哥</h2>
+                <p>豪是我們團隊的經理，他擁有豐富的專案管理經驗和出色的團隊專案協作能力，能夠保證專案的順利進行和按時完成</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
