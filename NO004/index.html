@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交錯漂浮版</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            padding: 100px o;
+            /* fixed可以讓圖片固定不隨Scroll移動 */
+            background: linear-gradient(20deg, #3d5493, #1aa2a0) fixed center center / 100% 100%;
+        }
+
+        .wrap {
+            width: 1200px;
+            margin: auto;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 70px;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .item h2 {
+            font-weight: 900;
+        }
+
+        .item p {
+            font-weight: 300;
+        }
+
+        .item .pic {
+            width: 55%;
+            /* 調整Flex元素的伸縮值 */
+            flex-shrink: 0;
+        }
+
+        .item .pic img {
+            width: 100%;
+            vertical-align: middle;
+        }
+
+        .item .txt {
+            width: 55%;
+            background-color: #fa8;
+            /* 調整Flex元素的伸縮值 */
+            flex-shrink: 0;
+            padding: 50px 30px;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;
+        }
+        /* 選取器 */
+        /* >：第一層物件(div pic & div txt) */
+        /* First-child：第一個物件 */
+        .item> :first-child {
+            margin-right: -10%;
+        }
+
+        .item:nth-child(1) .txt {
+            background-color: rgba(249, 248, 113, .8);
+        }
+
+        .item:nth-child(2) .txt {
+            background-color: rgba(184, 242, 136, .8);
+        }
+
+        .item:nth-child(3) .txt {
+            background-color: rgba(127, 230, 164, .8);
+        }
+
+        .item:nth-child(4) .txt {
+            background-color: rgba(84, 214, 187, .8);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- item1 -->
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/600/350/?random=10">
+            </div>
+            <div class="txt">
+                <h2>探索未知的世界</h2>
+                <p>每個人的心中都有一片未被探索的領域，那裡充滿了無限的可能和奇蹟。勇敢地踏出第一步，你會發現，世界比你想象的要精彩得多。</p>
+            </div>
+        </div>
+        <!-- item2 -->
+        <div class="item">
+            <div class="txt">
+                <h2>創意的力量</h2>
+                <p>創意是改變世界的力量，它能打破常規，讓我們看到不同的可能。每個創新的想法，都是通往未來的一扇窗。</p>
+            </div>
+            <div class="pic">
+                <img src="https://picsum.photos/600/350/?random=11">
+            </div>
+        </div>
+        <!-- item3 -->
+        <div class="item">
+            <div class="pic">
+                <img src="https://picsum.photos/600/350/?random=12">
+            </div>
+            <div class="txt">
+                <h2>持續學習的旅程</h2>
+                <p>學習是一生的旅程，每天都有新的知識等著我們去探索。保持好奇心，你會發現每天都充滿了新奇和樂趣。</p>
+            </div>
+        </div>
+        <!-- item4 -->
+        <div class="item">
+            <div class="txt">
+                <h2>與世界分享你的光芒</h2>
+                <p>每個人都有獨特的光芒，不要害怕展示真正的自己。當你與世界分享你的才華和熱情時，你會發現世界也會以同樣的方式回應你。</p>
+            </div>
+            <div class="pic">
+                <img src="https://picsum.photos/600/350/?random=13">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
