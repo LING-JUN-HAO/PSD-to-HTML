@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通用橫式版面</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .wrap{
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        /* -30deg左上到右下 */
+        background: linear-gradient(-30deg, #fdaecb, #e7597f, #fe8556);
+    }
+    .container{
+        width: 1300px;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .item{
+        width: 618px;
+        margin: 15px;
+        display: flex;
+        background-color: rgba(255, 255, 255, .6);
+        /* 深一點的灰色 */
+        border: 1px solid #888;
+        /* X軸 Y軸 模糊程度 顏色 */
+        box-shadow: 0 10px 30px rgba(160, 0, 0, .5);
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    .item .pic{
+        width: 50%;
+    }
+    .item .pic img{
+        width: 100%;
+        height: 100%;
+        /* 讓圖片按照原比例放大填滿容器而不拉長影響其原本長寬比 */
+        object-fit: cover;
+    }
+    .item .txt{
+        width: 50%;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+    .item .txt h2{
+        margin-bottom: 0.4em;
+        font-weight: 500;
+    }
+    .item .txt p{
+        font-weight: 300;
+    }
+    .item .txt .btn{
+        line-height: 1.5em;
+        border: 1px solid #ccc;
+        padding: 0 1em;
+        /* 個別調整子元素在交錯軸線的位置 */
+        align-self: flex-end;
+        border-radius: 200px;
+        /* 這是Flex的特性，會將這個元素推到這個容器底部，達到對齊的效果 */
+        margin-top: auto;
+        /* aaa淺灰色 */
+        color: #aaa;
+        font-weight: 600;
+    }
+    .item .txt .btn:hover{
+        background-color: #ccc;
+        color: #fff;
+    }
+</style>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <!-- item 1 -->
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/400/400/?random=10">
+                </div>
+                <div class="txt">
+                    <h2>探索網頁設計: 奧秘之旅</h2>
+                    <p>
+                        網頁設計不僅僅是代碼和圖像的組合，它是一門藝術，一門能夠將想法轉化為可視、可互動的現實的技術。
+                    </p>
+                    <a href="#" class="btn">more</a>
+                </div>
+            </div>
+            <!-- item 2 -->
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/400/400/?random=11">
+                </div>
+                <div class="txt">
+                    <h2>編碼力量: 打造夢想網站</h2>
+                    <p>
+                        通過學習和實踐編碼，我們可以創建功能強大、外觀美觀的網站，並在網路世界中留下自己的印記。
+                    </p>
+                    <a href="#" class="btn">more</a>
+                </div>
+            </div>
+            <!-- item 3 -->
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/400/400/?random=12">
+                </div>
+                <div class="txt">
+                    <h2>掌握CSS: 樣式的魔法</h2>
+                    <p>
+                        CSS不僅僅是使網站看起來更美觀，它是一個強大的工具，能夠使網站變得生動、易用並且吸引人。
+                    </p>
+                    <a href="#" class="btn">more</a>
+                </div>
+            </div>
+            <!-- item 4 -->
+            <div class="item">
+                <div class="pic">
+                    <img src="https://picsum.photos/400/400/?random=13">
+                </div>
+                <div class="txt">
+                    <h2>前端開發: 界面之美</h2>
+                    <p>
+                        優秀的前端開發能夠為用戶提供無與倫比的體驗，讓網站不僅僅是信息的載體，更是感受美的平台。
+                    </p>
+                    <a href="#" class="btn">more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
