@@ -4,3 +4,12 @@
 - Day3(2023/09/27)：https://ling-jun-hao.github.io/PSD-to-HTML/NO003/index.html
 - Day4(2023/09/28)：https://ling-jun-hao.github.io/PSD-to-HTML/NO004/index.html
 - Day4(2023/09/28)：https://ling-jun-hao.github.io/PSD-to-HTML/NO005/index.html
+- Day8(2023/10/04)：https://ling-jun-hao.github.io/PSD-to-HTML/NO006/index.html
+# 補充觀念(Amos老師)
+- Day5(2023/10/02)：https://ling-jun-hao.github.io/PSD-to-HTML/CSS_Reset/index.html
+- Day6(2023/10/02)：https://ling-jun-hao.github.io/PSD-to-HTML/inline_block-block-inline/index.html
+- Day6(2023/10/02)：https://ling-jun-hao.github.io/PSD-to-HTML/inline_block-block-inline/navbar.html
+- Day7(2023/10/03)：https://ling-jun-hao.github.io/PSD-to-HTML/Relative/index.html
+- Day7(2023/10/03)：https://ling-jun-hao.github.io/PSD-to-HTML/Absolute/index.html
+- Day7(2023/10/03)：https://ling-jun-hao.github.io/PSD-to-HTML/Absolute/Card.html
+- Day7(2023/10/03)：https://ling-jun-hao.github.io/PSD-to-HTML/Transition/index.html

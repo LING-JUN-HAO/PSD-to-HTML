@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>網頁頁尾版塊</title>
+    <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    .main-footer {
+        padding: 150px 0 0;
+        /* -20deg左下到右上 */
+        background: linear-gradient(-20deg, #3f5494, #08c7a5);
+    }
+    .container {
+        display: flex;
+        width: 1300px;
+        margin: auto;
+    }
+    .footer-item {
+        width: 0;
+        flex-grow: 1;
+        margin: 0px 20px;
+    }
+    .footer-item h4{
+        font-size: 24px;
+        color: #fff;
+        border-bottom: 1px dotted #fff;
+        margin-bottom: .5em;
+        padding-bottom: .5em;
+    }
+    .footer-item nav{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-item nav a{
+        color: #fff;
+        text-decoration: none;
+        text-decoration: none;
+        line-height: 1.4;
+        padding: 5px 0;
+    }
+    .footer-item nav a:hover{
+        color: #fa0;
+    }
+    .footer-subs{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer-subs form{
+        display: flex;
+        width: 100%;
+        margin: auto 0;
+    }
+    .footer-subs input[type="text"],
+    .footer-subs input[type="submit"]{
+        border: none;
+        padding: 5px 20px;
+    }
+    .footer-subs input[type="text"]{
+        width: 0;
+        flex-grow: 1;
+    }
+    .footer-subs input[type="submit"]{
+        background-color: #3e5293;
+        color: #70f6df;
+    }
+    .copyright{
+        width: 100%;
+        margin: 150px 0 0;
+        padding: 10px 0;
+        text-align: center;
+        background-color: #3e5293;
+        color: #70f6df;
+    }
+</style>
+
+<body>
+    <div class="main-footer">
+        <div class="container">
+            <div class="footer-item">
+                <h4>關於切版課程</h4>
+                <nav>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path
+                                fill="white" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>課程目標</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path
+                                fill="white" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>辦學理念</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path
+                                fill="white" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>課程宗旨</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>課程列表</h4>
+                <nav>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path
+                                fill="white" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>網頁切版入門班</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path
+                                fill="white" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>RWD網頁深入理解</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path
+                                fill="white" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>CSS3互動動畫設計</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path
+                                fill="white" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>Boostrap框架實務</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>服務項目</h4>
+                <nav>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path
+                                fill="white" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>網頁建置顧問</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path
+                                fill="white" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>網站設計建置</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path
+                                fill="white" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>網站規劃</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path
+                                fill="white" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>企業教育訓練</a>
+                </nav>
+            </div>
+            <div class="footer-item footer-subs">
+                <h4>訂閱電子報</h4>
+                <form>
+                    <input type="text" name="">
+                    <input type="submit" name="訂閱">
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright &copy; 2023
+            Antonio 網頁切版教學
+        </div>
+    </div>
+</body>
+
+</html>
