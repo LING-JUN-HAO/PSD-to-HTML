@@ -7,10 +7,10 @@
 - Day8(2023/10/04)：https://ling-jun-hao.github.io/PSD-to-HTML/NO006/index.html
 - Day9(2023/10/05)：https://ling-jun-hao.github.io/PSD-to-HTML/NO007/index.html
 # 補充觀念(Amos老師)
-- Day5(2023/10/02)：https://ling-jun-hao.github.io/PSD-to-HTML/CSS_Reset/index.html
-- Day6(2023/10/02)：https://ling-jun-hao.github.io/PSD-to-HTML/inline_block-block-inline/index.html
-- Day6(2023/10/02)：https://ling-jun-hao.github.io/PSD-to-HTML/inline_block-block-inline/navbar.html
-- Day7(2023/10/03)：https://ling-jun-hao.github.io/PSD-to-HTML/Relative/index.html
-- Day7(2023/10/03)：https://ling-jun-hao.github.io/PSD-to-HTML/Absolute/index.html
-- Day7(2023/10/03)：https://ling-jun-hao.github.io/PSD-to-HTML/Absolute/Card.html
-- Day7(2023/10/03)：https://ling-jun-hao.github.io/PSD-to-HTML/Transition/index.html
+- Day5(2023/10/02)-CSS_Reset：https://ling-jun-hao.github.io/PSD-to-HTML/CSS_Reset/index.html
+- Day6(2023/10/02)-inline_block基礎：https://ling-jun-hao.github.io/PSD-to-HTML/inline_block-block-inline/index.html
+- Day6(2023/10/02)-inline_block實際應用：https://ling-jun-hao.github.io/PSD-to-HTML/inline_block-block-inline/navbar.html
+- Day7(2023/10/03)-Relative：https://ling-jun-hao.github.io/PSD-to-HTML/Relative/index.html
+- Day7(2023/10/03)-Absolute基礎：https://ling-jun-hao.github.io/PSD-to-HTML/Absolute/index.html
+- Day7(2023/10/03)-Absolute實際應用：https://ling-jun-hao.github.io/PSD-to-HTML/Absolute/Card.html
+- Day7(2023/10/03)-Transition：https://ling-jun-hao.github.io/PSD-to-HTML/Transition/index.html
