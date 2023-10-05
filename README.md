@@ -5,6 +5,7 @@
 - Day4(2023/09/28)：https://ling-jun-hao.github.io/PSD-to-HTML/NO004/index.html
 - Day4(2023/09/28)：https://ling-jun-hao.github.io/PSD-to-HTML/NO005/index.html
 - Day8(2023/10/04)：https://ling-jun-hao.github.io/PSD-to-HTML/NO006/index.html
+- Day9(2023/10/05)：https://ling-jun-hao.github.io/PSD-to-HTML/NO007/index.html
 # 補充觀念(Amos老師)
 - Day5(2023/10/02)：https://ling-jun-hao.github.io/PSD-to-HTML/CSS_Reset/index.html
 - Day6(2023/10/02)：https://ling-jun-hao.github.io/PSD-to-HTML/inline_block-block-inline/index.html
