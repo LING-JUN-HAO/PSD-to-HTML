@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>麵包屑</title>
+    <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        body {
+            background-color: #562870;
+        }
+
+        .wrap {
+            padding: 10px 0;
+            background-color: #ec008b;
+            /* X軸 Y軸 模糊程度 顏色 */
+            box-shadow: 0 5px 5px hsla(260, 100%, 20%, .5)
+        }
+
+        .breadcrumb {
+            width: 90%;
+            margin: auto;
+            display: flex;
+        }
+
+        .breadcrumb li {
+            padding: 0 20px;
+        }
+
+        .breadcrumb a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .breadcrumb a:hover,
+        .breadcrumb li:last-child a {
+            color: #ff0;
+        }
+
+        .breadcrumb li+li {
+            padding-left: 0;
+        }
+
+        .breadcrumb li+li:before {
+            content: '>';
+            color: #fff;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ol class="breadcrumb">
+            <li><a href="#">CSS可樂</a></li>
+            <li><a href="#">CSS教學</a></li>
+            <li><a href="#">金魚系列</a></li>
+            <li><a href="#">切版技巧</a></li>
+            <li><a href="#">FFlex</a></li>
+            <li><a href="#">麵包屑</a></li>
+        </ol>
+    </div>
+</body>
+
+</html>

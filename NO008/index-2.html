@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>變化導覽列</title>
+    <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    .header-search button svg{
+        width: 12px;
+        height: 12px;
+    }
+    .main-header{
+        background-image: linear-gradient(0deg, #cc4380, #fb6c75);
+    }
+    .main-header .container{
+        display: flex;
+        /* 次軸居中 */
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
+    .main-header .logo{
+        width: 100px;
+    }
+    .main-header .logo img{
+        width: 100px;
+        height: 100px;
+        border-radius: 180px;
+        /* 垂直置中 */
+        vertical-align: middle;
+    }
+    .main-header .main-nav:first-of-type{
+        /* margin: auto; */
+        order: -1;
+    }
+    .main-header .main-nav a:nth-child(3){
+        margin-left: 150px;
+    }
+    .main-header .main-nav a::after{
+        content: "";
+        position: absolute;
+        /* 這邊告訴偽元素從左邊到右邊(等於0) */
+        left: 50%;
+        right: 50%;
+        /* -- */
+        /* 這邊是為了讓after不要佔空間(Border一樣會顯示) */
+        height: 0;
+        /* 從底部往上推的距離(負數拉近底部的距離) */
+        bottom: -5px;
+        border-bottom: 1px solid #fff;
+        transition: .3s;
+    }
+    .main-header .main-nav a:hover:after{
+        /* 這邊告訴偽元素從左邊到右邊(等於元素寬度) */
+        left: 0;
+        right: 0;
+    }
+    .main-header .main-nav a{
+        /* inline的動畫會起不了作用 */
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 1em;
+        position: relative;
+        transform: translateY(0);
+    }
+    
+    .main-header .main-nav a:hover{
+        transform: translateY(-5px);
+    }
+    .main-header .header-search{
+        display: flex;
+    }
+    .main-header .header-search button,
+    .main-header .header-search input{
+        border: none;
+        background-color: #fff;
+        padding: 5px 10px;
+    }
+    .main-header .header-search button:focus,
+    .main-header .header-search input:focus{
+        outline: none;
+    }
+    .main-header .header-search button{
+        /* 左上右上右下左下 */
+        border-radius: 0 200px 200px 0;
+    }
+    .main-header .header-search input{
+        border-radius: 200px 0 0 200px;
+    }
+
+</style>
+
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="https://picsum.photos/300/200/?random=10">
+            </a>
+            <nav class="main-nav">
+                <a href="#">夢幻星空探索</a>
+                <a href="#">秘密的森林冒險</a>
+            </nav>
+            <nav class="main-nav">
+                <a href="#">都市傳說與迷思</a>
+                <a href="#">時間旅行的奧秘</a>
+            </nav>
+        </div>
+    </header>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>方塊酥版面</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .wrap {
+        width: 100%;
+        /* 這邊是為了消除原本float影響導致wrap沒有高度空間重新抓取item高度 */
+        overflow: hidden;
+        background-color: #000;
+    }
+
+    .item {
+        /* float會自動補齊同一行的空白空間所以會排在同一行 */
+        float: left;
+        position: relative;
+    }
+
+    .item img {
+        width: 100%;
+        vertical-align: middle;
+    }
+
+    .item:first-child {
+        width: 50%;
+    }
+
+    .item:first-child~.item {
+        width: 25%;
+    }
+
+    .item .txt {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        /* 這個padding會超出去所以要使用box-sizing調整 */
+        padding: 15px;
+        box-sizing: border-box;
+        text-align: center;
+        color: #fff;
+        background-color: rgba(0, 0, 0, .6);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transform: scale(0);
+        transition: .5s;
+    }
+    .item:hover .txt{
+        transform: scale(1);
+        opacity: 1;
+    }
+    .item h3{
+        margin-bottom: .4em;
+    }
+    .item p{
+        font-weight: 100;
+        line-height: 1.7;
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <div class="item">
+            <img src="https://picsum.photos/500/500/?random=10">
+            <div class="txt">
+                <h3>探索未知之地</h3>
+                <p>每一次的旅行都是一次對未知世界的探索，帶著好奇心，我們踏上了這段冒險之旅。</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/500/?random=20">
+            <div class="txt">
+                <h3>夢想的翅膀</h3>
+                <p>夢想賦予我們翅膀，讓我們飛翔在藍天之上，追求那遙不可及的星辰。</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/500/?random=30">
+            <div class="txt">
+                <h3>時光的印記</h3>
+                <p>時間流逝，留下的只是那些難忘的回憶和深刻的印記，成為我們生命中不可磨滅的部分。</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/500/?random=40">
+            <div class="txt">
+                <h3>音樂的魔法</h3>
+                <p>音樂有著神奇的力量，它可以撫慰我們的心靈，帶領我們進入另一個世界。</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="https://picsum.photos/500/500/?random=50">
+            <div class="txt">
+                <h3>自然的呼喚</h3>
+                <p>大自然總是充滿了驚奇，它的每一次呼喚都是對我們的一次召喚，讓我們更加珍惜這片土地。</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

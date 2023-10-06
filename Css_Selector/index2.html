@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    h1+p {
+        color: red;
+    }
+    li {
+        display: inline-block;
+    }
+    /* 每一個符合前面有一個li的都會套用(第一個前面沒有li) */
+    li+li {
+        border-left: 1px solid #aaa;
+    }
+</style>
+
+<body>
+    <h1>h1的標題文字</h1>
+    <p>段落一的內容...</p>
+    <p>段落二的內容...</p>
+    <p>段落三的內容...</p>
+    <hr>
+    <ul>
+        <li>暴力網頁入門班</li>
+        <li>RWD原來醬子班</li>
+        <li>金魚都懂的網頁入門</li>
+        <li>金魚都懂的這個網頁怎麼切</li>
+    </ul>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* h1標籤之後的所有p均會套用這個特性(無視中間其他標籤影響) */
+    h1~p {
+        color: red;
+    }
+
+    .color {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+
+    }
+
+    .color-box {
+        width: 100px;
+        height: 100px;
+        margin-top: 20px;
+        background: #ccc;
+    }
+
+    .R {
+        background-color: red;
+    }
+
+    .G {
+        background-color: green;
+    }
+
+    .B {
+        background-color: blue;
+    }
+
+    .R:hover~.color-box {
+        background-color: red;
+    }
+
+    .G:hover~.color-box {
+        background-color: green;
+    }
+
+    .B:hover~.color-box {
+        background-color: blue;
+    }
+</style>
+
+<body>
+    <h1>我是h1的標題</h1>
+    <p>段落一的內容...</p>
+
+    <h2>我是h2的標題</h2>
+    <p>段落二的內容...</p>
+    <p>段落三的內容...</p>
+
+    <hr>
+    <h2>應用2透過hover牽動下方顏色變動</h2>
+    <a href="#" class="color R">R</a>
+    <a href="#" class="color G">G</a>
+    <a href="#" class="color B">B</a>
+    <div class="color-box"></div>
+</body>
+
+</html>
