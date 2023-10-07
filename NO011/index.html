@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>破格式設計</title>
+    <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: flex;
+        /* 顏色從右下到左上 */
+        background-image: linear-gradient(-45deg, #fffaf0, #f8c3c1);
+    }
+
+    .wrap {
+        display: flex;
+        width: 1200px;
+        margin: auto;
+        padding-top: 75px;
+    }
+
+    .item {
+        width: 370px;
+        margin: 0 15px;
+        text-align: center;
+        border: 10px solid #f9cec2;
+        background-color: #fff;
+        box-shadow: 10px 20px 50px #f7b6a7;
+    }
+
+    .item h3 {
+        color: #f5afac;
+        padding: 10px;
+    }
+
+    .item p {
+        color: #ccc;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    .item .icon {
+        width: 150px;
+        height: 150px;
+        background-color: #fff;
+        margin: -75px auto 0;
+        font-size: 65px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .item:hover svg {
+        /* 執行時間(.2s) 動畫速度線性(linear) infinite(反覆執行)  alternate(動畫播完會反向播放) */
+        animation: shake .2s linear infinite alternate;
+    }
+
+    .item .icon::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-top: 10px solid #f9cec2;
+        border-right: 10px solid #f9cec2;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid transparent;
+        top: -10px;
+        left: -10px;
+        border-radius: 50%;
+        /* 將角度轉45度，讓半圓形朝上 */
+        transform: rotate(-45deg);
+    }
+
+    .item .txt {
+        /* 上 左右 下 */
+        padding: 20px 20px 2em;
+    }
+
+    .icon svg {
+        height: 65px;
+        width: 65px;
+    }
+
+    @keyframes shake {
+
+        /* 0%開始的時候 */
+        0% {
+            transform: rotate(-20deg);
+        }
+
+        /* 100%結束的時候 */
+        100% {
+            transform: rotate(20deg);
+        }
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <div class="item">
+            <div class="icon">
+                <svg fill="#f5afac" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                    <path
+                        d="M413.5 237.5c-28.2 4.8-58.2-3.6-80-25.4l-38.1-38.1C280.4 159 272 138.8 272 117.6V105.5L192.3 62c-5.3-2.9-8.6-8.6-8.3-14.7s3.9-11.5 9.5-14l47.2-21C259.1 4.2 279 0 299.2 0h18.1c36.7 0 72 14 98.7 39.1l44.6 42c24.2 22.8 33.2 55.7 26.6 86L503 183l8-8c9.4-9.4 24.6-9.4 33.9 0l24 24c9.4 9.4 9.4 24.6 0 33.9l-88 88c-9.4 9.4-24.6 9.4-33.9 0l-24-24c-9.4-9.4-9.4-24.6 0-33.9l8-8-17.5-17.5zM27.4 377.1L260.9 182.6c3.5 4.9 7.5 9.6 11.8 14l38.1 38.1c6 6 12.4 11.2 19.2 15.7L134.9 484.6c-14.5 17.4-36 27.4-58.6 27.4C34.1 512 0 477.8 0 435.7c0-22.6 10.1-44.1 27.4-58.6z" />
+                </svg>
+            </div>
+            <div class="txt">
+                <h3>科技的未來視野</h3>
+                <p>隨著科技的快速發展，我們正邁向一個前所未有的數字時代。從人工智慧到量子計算，新的技術不斷地重塑我們的生活方式和工作方式。未來，我們可以期待更多的創新和突破，為我們帶來更多的可能性和機會。</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="icon">
+                <svg fill="#f5afac" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                        d="M323.8 34.8c-38.2-10.9-78.1 11.2-89 49.4l-5.7 20c-3.7 13-10.4 25-19.5 35l-51.3 56.4c-8.9 9.8-8.2 25 1.6 33.9s25 8.2 33.9-1.6l51.3-56.4c14.1-15.5 24.4-34 30.1-54.1l5.7-20c3.6-12.7 16.9-20.1 29.7-16.5s20.1 16.9 16.5 29.7l-5.7 20c-5.7 19.9-14.7 38.7-26.6 55.5c-5.2 7.3-5.8 16.9-1.7 24.9s12.3 13 21.3 13L448 224c8.8 0 16 7.2 16 16c0 6.8-4.3 12.7-10.4 15c-7.4 2.8-13 9-14.9 16.7s.1 15.8 5.3 21.7c2.5 2.8 4 6.5 4 10.6c0 7.8-5.6 14.3-13 15.7c-8.2 1.6-15.1 7.3-18 15.1s-1.6 16.7 3.6 23.3c2.1 2.7 3.4 6.1 3.4 9.9c0 6.7-4.2 12.6-10.2 14.9c-11.5 4.5-17.7 16.9-14.4 28.8c.4 1.3 .6 2.8 .6 4.3c0 8.8-7.2 16-16 16H286.5c-12.6 0-25-3.7-35.5-10.7l-61.7-41.1c-11-7.4-25.9-4.4-33.3 6.7s-4.4 25.9 6.7 33.3l61.7 41.1c18.4 12.3 40 18.8 62.1 18.8H384c34.7 0 62.9-27.6 64-62c14.6-11.7 24-29.7 24-50c0-4.5-.5-8.8-1.3-13c15.4-11.7 25.3-30.2 25.3-51c0-6.5-1-12.8-2.8-18.7C504.8 273.7 512 257.7 512 240c0-35.3-28.6-64-64-64l-92.3 0c4.7-10.4 8.7-21.2 11.8-32.2l5.7-20c10.9-38.2-11.2-78.1-49.4-89zM32 192c-17.7 0-32 14.3-32 32V448c0 17.7 14.3 32 32 32H96c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32H32z" />
+                </svg>
+            </div>
+            <div class="txt">
+                <h3>環保的重要性</h3>
+                <p> 隨著全球氣候變化的威脅日益加劇，環保已經成為我們不能忽視的議題。每個人都有責任採取行動，減少碳足跡，並保護我們珍貴的地球。通過簡單的日常習慣，如減少浪費、回收和使用可再生能源，我們都可以為建立一個更綠色、更可持續的未來做出貢獻。
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="icon">
+                <svg fill="#f5afac" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path
+                        d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z" />
+                </svg>
+            </div>
+            <div class="txt">
+                <h3>藝術與心靈的連接</h3>
+                <p>藝術不僅是一種表達方式，更是一種與內心深處的自我連接的方式。它可以治愈、啟發並帶給我們力量。無論是音樂、繪畫還是舞蹈，藝術都能夠觸動我們的情感，幫助我們理解自己和這個世界。當我們沉浸在藝術中時，我們可以找到安慰、靈感和希望。
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
