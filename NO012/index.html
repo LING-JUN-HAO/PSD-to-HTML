@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格救星</title>
+    <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    html,
+    body {
+        height: 100%;
+    }
+    body {
+        display: flex;
+        align-items: center;
+        background-image: linear-gradient(90deg, #3d5894, #08c7a5);
+    }
+    .table {
+        width: 800px;
+        margin: auto;
+    }
+    .table table {
+        width: 100%;
+        text-align: center;
+        border: 3px double #666;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    .table thead{
+        background-color: #333;
+        color: #fff;
+    }
+    /* 左上 右上 右下 左下 */
+    .table thead th:first-child{
+        border-radius: 7px 0 0 0;
+    }
+    .table thead th:last-child{
+        border-radius: 0 7px 0 0;
+    }
+    .table tbody tr:nth-child(even){
+       background-color: #ffa; 
+    }
+    .table tbody a{
+        font-weight: 400;
+        color: #333;
+    }
+    .table tbody tr:hover{
+        background-color: #AEDFF7;
+    }
+    .table tfoot td:first-child{
+        border-radius: 0 0 0 7px;
+    }
+    .table tfoot td:last-child{
+        border-radius: 0 0 7px 0;
+    }
+    .table th {
+        border: 1px solid #666;
+        padding: 6px 10px;
+        text-align: center;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .table td {
+        border: 1px solid #666;
+        padding: 6px 10px;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    .table caption{
+        caption-side: bottom;
+        text-align: right;
+        padding: 10px 0;
+        color: #333;
+        font-weight: 800;
+    }
+    .table caption a{
+        color: #eee;
+    }
+</style>
+
+<body>
+    <div class="table">
+        <table>
+            <caption>
+                產品清單<a href="#">查看更多</a>
+            </caption>
+            <thead>
+                <tr>
+                    <th scope="col">名稱</th>
+                    <th scope="col">類型</th>
+                    <th scope="col">價格</th>
+                    <th scope="col">數量</th>
+                    <th scope="col">製造日期</th>
+                    <th scope="col">到期日期</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#">產品A</a></td>
+                    <td>食品</td>
+                    <td>$100</td>
+                    <td>50</td>
+                    <td>2023-01-01</td>
+                    <td>2023-12-31</td>
+                </tr>
+                <tr>
+                    <td><a href="#">產品B</a></td>
+                    <td>飲料</td>
+                    <td>$50</td>
+                    <td>100</td>
+                    <td>2023-02-01</td>
+                    <td>2023-12-31</td>
+                </tr>
+                <tr>
+                    <td><a href="#">產品C</a></td>
+                    <td>家用品</td>
+                    <td>$150</td>
+                    <td>30</td>
+                    <td>2023-03-01</td>
+                    <td>2024-02-28</td>
+                </tr>
+                <tr>
+                    <td><a href="#">產品D</a></td>
+                    <td>玩具</td>
+                    <td>$200</td>
+                    <td>20</td>
+                    <td>2023-04-01</td>
+                    <td>2024-03-31</td>
+                </tr>
+                <tr>
+                    <td><a href="#">產品E</a></td>
+                    <td>書籍</td>
+                    <td>$30</td>
+                    <td>100</td>
+                    <td>2023-05-01</td>
+                    <td>2025-04-30</td>
+                </tr>
+                <tr>
+                    <td><a href="#">產品F</a></td>
+                    <td>電器</td>
+                    <td>$500</td>
+                    <td>10</td>
+                    <td>2023-06-01</td>
+                    <td>2026-05-31</td>
+                </tr>
+                <tr>
+                    <td><a href="#">產品G</a></td>
+                    <td>服裝</td>
+                    <td>$80</td>
+                    <td>40</td>
+                    <td>2023-07-01</td>
+                    <td>2024-06-30</td>
+                </tr>
+                <tr>
+                    <td><a href="#">產品H</a></td>
+                    <td>鞋子</td>
+                    <td>$120</td>
+                    <td>25</td>
+                    <td>2023-08-01</td>
+                    <td>2024-07-31</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>總計</td>
+                    <td colspan="5">$1230</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</body>
+
+</html>
