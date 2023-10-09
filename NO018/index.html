@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>訊息對話紀錄</title>
+    <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    html,body{
+        height: 100%;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #d3effb;
+    }
+    .dialogue{
+        width: 500px;
+        padding: 20px;
+        box-shadow: 0 0 10px #3e92cc;
+        background-color: #f4f5f7;
+    }
+    .local{
+        justify-content: flex-end;
+    }
+    .user{
+        display: flex;
+        margin-bottom: 20px;
+        font-family: 'Noto Sans TC', sans-serif;
+        align-items: flex-start;
+    }
+    .user .avatar{
+        width: 60px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+    .user .pic{
+        /* 透過設定圓形邊界將超過的部分隱藏讓圖片只顯示圓形 */
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    .user .pic img{
+        width: 100%;
+        height: 60px;
+        vertical-align: middle;
+    }
+    .user .txt{
+        background-color: #aaa;
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+    }
+    .remote .txt{
+        margin-left: 20px;
+        margin-right: 80px;
+        background-color: #fff ;
+        color: #a1b4c5;
+    }
+    .local .txt{
+        margin-left: 80px;
+        margin-right: 20px;
+        order: -1;
+        background-color: #3e92cc;
+        color: #fff;
+    }
+    .remote .txt::before,
+    .local .txt::before{
+        content: '';
+        position: absolute;
+        top: 10px;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+    .remote .txt::before{
+        border-right: 10px solid #fff;
+        left: -9px;
+    }
+    .local .txt::before{
+        border-left: 10px solid #3e92cc;
+        right: -9px;
+    }
+</style>
+<body>
+    <div class="dialogue">
+        <div class="user remote">
+            <div class="avatar">
+                <div class="pic">
+                    <img src="./Antonio.Png">
+                </div>
+                <div class="name">Antonio</div>
+            </div>
+            <div class="txt">哈囉~今天的你有好好吃飯嗎?</div>
+        </div>
+        <div class="user local">
+            <div class="avatar">
+                <div class="pic">
+                    <img src="./Maxine.Png">
+                </div>
+                <div class="name">Maxine</div>
+            </div>
+            <div class="txt">先咬咬在說，因為餓死鬼上身了</div>
+        </div>
+        <div class="user remote">
+            <div class="avatar">
+                <div class="pic">
+                    <img src="./Antonio.Png">
+                </div>
+                <div class="name">Antonio</div>
+            </div>
+            <div class="txt">痾..........快出門買一大堆食物</div>
+        </div>
+        <div class="user local">
+            <div class="avatar">
+                <div class="pic">
+                    <img src="./Maxine.Png">
+                </div>
+                <div class="name">Maxine</div>
+            </div>
+            <div class="txt">主委加碼啦，趴機趴機的咬咬</div>
+        </div>
+        <div class="user remote">
+            <div class="avatar">
+                <div class="pic">
+                    <img src="./Antonio.Png">
+                </div>
+                <div class="name">Antonio</div>
+            </div>
+            <div class="txt">請問喜歡今天的起家雞嗎</div>
+        </div>
+        <div class="user local">
+            <div class="avatar">
+                <div class="pic">
+                    <img src="./Maxine.Png">
+                </div>
+                <div class="name">Maxine</div>
+            </div>
+            <div class="txt">非常滿意的微笑啦(使用非常快的速度把食物塞進嘴裡)</div>
+        </div>
+    </div>
+</body>
+</html>
