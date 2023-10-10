@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時間軸</title>
+    <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    body{
+        background-color: #edece1;
+    }
+    .wrap{
+        width: 960px;
+        margin: auto;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+    .wrap h1{
+        margin-top: 50px;
+        padding-bottom: 10px;
+    }
+    .timeline{
+        padding: 20px 0 40px;
+    }
+    .timeline::after{
+        /* 因為float需要進行clearfix才能讓padding有作用 */
+        content: '';
+        display: block;
+        height: 0;
+        clear: both;
+    }
+    .timeline a{
+        display: inline-block;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #aaa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 5px #888;
+    }
+    .timeline a:hover{
+        background-color: #6fa5f6;
+    }
+    .timeline a:hover h2,
+    .timeline a:hover p{
+        color: #fff;
+    }
+    .timeline h2{
+        color: #333;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 800;
+    }
+    .timeline p{
+        color: #666;
+        font-family: 'Noto Sans TC', sans-serif;
+        font-weight: 300;
+    }
+    .timeline li{
+        width: 50%;
+        /* 如果沒有設置的話下面設置的padding會超出整個容器大小 */
+        box-sizing: border-box;
+        padding: 20px 0;
+        position: relative;
+    }
+    .timeline li:nth-child(odd){
+        float: left;
+        padding-right: 100px;
+        /* 如果資料不同，會造成float黏貼在上一個li上(但是加上clear:left後代表他不會成為左浮動項目的右側，也就是他不會貼過去) */
+        clear: left;
+    }
+    .timeline li:nth-child(even){
+        float: right;
+        padding-left: 100px;
+        /* 讓偶數方塊產生偏移視覺上有交錯效果 */
+        transform: translateY(50%);
+    }
+    .timeline li:nth-child(odd)::after{
+        content: "";
+        position: absolute;
+        width: 1px;
+        /* 線條的寬度取決於父層li的高度(含padding) */
+        height: 100%;
+        background-color: #ccc;
+        right:0;
+        z-index: -1;
+    }
+    /* 這個是避免區塊數為基數的情況，如果是偶數因為本來偶數項就會下滑50%因此上面的基數項線條剛好就會對齊在一半的位置 */
+    .timeline li:last-child::after{
+        height: 50%;
+    }
+    .timeline li::before{
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #aaa;
+        z-index: 1;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .timeline li:nth-child(odd)::before{
+        /* 因為圓圈的寬度是20px(切一半) */
+        right: -10px;
+    }
+    .timeline li:nth-child(even)::before{
+        left: -10px;
+    }
+    .timeline h2::after{
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100px;
+        background-color: #aaa;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .timeline li:nth-child(odd) h2::after{
+        right: 0;
+    }
+    .timeline li:nth-child(even) h2::after{
+        left: 0;
+    }
+
+</style>
+<body>
+    <div class="wrap">
+        <h1>歷史里程碑</h1>
+        <p>探索塑造我們多年旅程的重要事件和里程碑。</p>
+        <ul class="timeline">
+            <li>
+                <a href="#">
+                    <h2>我們的旅程開始</h2>
+                    <p>我們的公司建立在創新和卓越的原則上。初期充滿了挑戰，但我們團隊的奉獻使克服它們成為可能。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>首次重大成就</h2>
+                    <p>我們推出了第一款產品，從用戶和評論家那裡獲得了正面的反饋。這是我們公司的轉折點。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>擴展到新市場</h2>
+                    <p>隨著我們初步產品的成功，我們將業務擴展到國際市場，建立了全球影響力。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>引入下一代解決方案</h2>
+                    <p>我們引入了一系列下一代解決方案，為行業設定了新的標準，進一步鞏固了我們作為市場領導者的地位。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>社區參與</h2>
+                    <p>我們開始了社區參與計劃，專注於回饋社會，確保可持續增長。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>認可和獎項</h2>
+                    <p>我們的努力得到了行業同行的認可，並獲得了多項創新和卓越獎項。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>未來計劃和抱負</h2>
+                    <p>展望未來，我們仍然致力於突破界限，探索新的視野，以更好地為我們的客戶服務。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>擁抱新技術</h2>
+                    <p>我們不斷探索新技術和方法，以保持在不斷演變的數字景觀中的領先地位。</p>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <h2>策略探索與實業發展</h2>
+                    <p>我們堅持創新，不斷研究市場趨勢，提供領先的產品和服務，確保在競爭中保持領先。</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
