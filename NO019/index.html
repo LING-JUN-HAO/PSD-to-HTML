@@ -22,13 +22,10 @@
         width: 960px;
         margin: auto;
         font-family: 'Noto Sans TC', sans-serif;
-    }
-    .wrap h1{
-        margin-top: 50px;
-        padding-bottom: 10px;
+        padding-top: 50px;
     }
     .timeline{
-        padding: 20px 0 40px;
+        padding: 50px 0;
     }
     .timeline::after{
         /* 因為float需要進行clearfix才能讓padding有作用 */
@@ -38,13 +35,14 @@
         clear: both;
     }
     .timeline a{
-        display: inline-block;
+        display: block;
         text-decoration: none;
         background-color: #fff;
         border: 1px solid #aaa;
         padding: 20px;
         border-radius: 10px;
         box-shadow: 3px 3px 5px #888;
+        box-sizing: border-box;
     }
     .timeline a:hover{
         background-color: #6fa5f6;
@@ -56,12 +54,13 @@
     .timeline h2{
         color: #333;
         font-family: 'Noto Sans TC', sans-serif;
-        font-weight: 800;
+        font-weight: 700;
+        padding: 15px 0;
     }
     .timeline p{
         color: #666;
         font-family: 'Noto Sans TC', sans-serif;
-        font-weight: 300;
+        font-weight: 100;
     }
     .timeline li{
         width: 50%;
@@ -88,6 +87,7 @@
         width: 1px;
         /* 線條的寬度取決於父層li的高度(含padding) */
         height: 100%;
+        top: 0;
         background-color: #ccc;
         right:0;
         z-index: -1;
@@ -95,6 +95,9 @@
     /* 這個是避免區塊數為基數的情況，如果是偶數因為本來偶數項就會下滑50%因此上面的基數項線條剛好就會對齊在一半的位置 */
     .timeline li:last-child::after{
         height: 50%;
+    }
+    .timeline li:first-child::after{
+        top: 20px;
     }
     .timeline li::before{
         content: '';
