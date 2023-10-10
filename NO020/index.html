@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旋轉拼接方塊</title>
+    <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    ul {
+        width: 960px;
+        margin: auto;
+        padding: 100px 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    li {
+        width: 200px;
+        height: 200px;
+        text-align: center;
+        line-height: 200px;
+        /* 拉近跟上面的距離 */
+        margin: -40px 60px 30px;
+        position: relative;
+        font-size: 30px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    li::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transform: rotate(45deg);
+    }
+
+    li:nth-child(n +4) {
+        /* 直接開F12偷看 */
+        left: 160px;
+    }
+
+    li:nth-child(n +7) {
+        left: 0;
+    }
+
+    .box1::before {
+        background-color: #FFD1DC;
+        /* Light Pink */
+    }
+
+    .box2::before {
+        background-color: #FFE4B5;
+        /* Moccasin */
+    }
+
+    .box3::before {
+        background-color: #FFF5BA;
+        /* Light Yellow */
+    }
+
+    .box4::before {
+        background-color: #FFDACD;
+        /* Peach Puff */
+    }
+
+    .box5::before {
+        background-color: #FFCBA4;
+        /* Peach */
+    }
+
+    .box6::before {
+        background-color: #FFDEAD;
+        /* Navajo White */
+    }
+
+    .box7::before {
+        background-color: #FFECB3;
+        /* Beige */
+    }
+
+    .box8::before {
+        background-color: #FFDAB9;
+        /* Peach Puff Lighter */
+    }
+
+    .box9::before {
+        background-color: #FFE5B4;
+        /* Moccasin Lighter */
+    }
+    li:hover{
+        color: #fff;
+    }
+    li:hover::before{
+        background-color: #666;
+    }
+</style>
+
+<body>
+    <ul>
+        <li class="box1">夢之翼</li>
+        <li class="box2">時光回憶</li>
+        <li class="box3">花開之期</li>
+        <li class="box4">努力的軌跡</li>
+        <li class="box5">風的輕語</li>
+        <li class="box6">星空之誓</li>
+        <li class="box7">陽光之愛</li>
+        <li class="box8">珍惜每刻</li>
+        <li class="box9">生活旋律</li>
+    </ul>
+</body>
+
+</html>
