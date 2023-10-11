@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不規則邊緣</title>
+    <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .banner {
+        height: 700px;
+        background: url("./blog.svg") center top / cover;
+    }
+
+    .sec {
+        position: relative;
+    }
+
+    .sec .container {
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        padding: 100px 0;
+        /* z-index只對於設置position元素有作用(預設Static不會有作用) */
+        position: relative;
+        z-index: 2;
+    }
+
+    .sec .item {
+        width: 570px;
+        margin: 0 15px;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .sec h2 {
+        margin-bottom: 1.3em;
+    }
+
+    .sec .item {
+        list-style: 1.7;
+        margin-bottom: 1.6em;
+    }
+
+    .sec::after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        background-color: #fff;
+        top: 0;
+        left: 50%;
+        transform: translateX(-30%) translateY(-50%);
+        border-radius: 50%;
+        /* 多重陰影特效*/
+        box-shadow: 178px 0px 0px 30px #fff,
+            327px 34px 0px 20px #fff,
+            480px 9px 0px 60px #fff,
+            819px 0px 0px 89px #fff,
+
+            -178px 0px 0px 30px #fff,
+            -327px 34px 0px 20px #fff,
+            -480px 9px 0px 60px #fff,
+            -690px 71px 0px 60px #fff,
+            -880px 0px 0px 89px #fff,
+            -1100px 50px 0px 89px #fff,
+
+            100px 0px 0px 56px rgba(0,0,10,.5),
+            290px 10px 0px 56px rgba(0,0,10,.5),
+            540px -40px 0px 56px rgba(0,0,10,.5),
+            740px -30px 0px 30px rgba(0,0,10,.5),
+            880px -100px 0px 80px rgba(0,0,10,.5),
+            1000px -30px 0px 80px rgba(0,0,10,.5),
+
+            -60px 0px 0px 56px rgba(0,0,10,.5),
+            -298px 10px 0px 56px rgba(0,0,10,.5),
+            -540px -40px 0px 50px rgba(0,0,10,.5),
+            -740px -30px 0px 30px rgba(0,0,10,.5),
+            -780px -30px 0px 30px rgba(0,0,10,.5),
+            -1200px 0px 0px 80px rgba(0,0,10,.5);
+    }
+    .sec::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 200px;
+        z-index: 1;
+        background-color: #fff;
+    }
+</style>
+
+<body>
+    <div class="banner"></div>
+    <div class="sec">
+        <div class="container">
+            <div class="item">
+                <h2>人氣按照有一律師妻子心理友情連結活動接。</h2>
+                <p>不行之一最好的福建物業廠商明確容易，差距興奮情況攝影感興趣還要來的不可熱情免費版工程，只不過青草湖，一下子臨床前進醫藥用戶名單不夠，一部分一家授權方式優惠有限公司，斑竹英文拿出樣子屏東方法於是加快衣服十分我是，信譽婚姻是在體會一副都在對於不能下載品牌信用含有，有什麼，像是呵呵獲取無派工具看法繼續英語敵人居住小時，隱藏版好多無關，屏幕圖書館聰明姓名再次灌水，情緒已經亞洲，檔案教學關鍵顧問填寫，互動。
+                </p>
+            </div>
+            <div class="item">
+                <h2>人氣按照有一律師妻子心理友情連結活動接。</h2>
+                <p>不行之一最好的福建物業廠商明確容易，差距興奮情況攝影感興趣還要來的不可熱情免費版工程，只不過青草湖，一下子臨床前進醫藥用戶名單不夠，一部分一家授權方式優惠有限公司，斑竹英文拿出樣子屏東方法於是加快衣服十分我是，信譽婚姻是在體會一副都在對於不能下載品牌信用含有，有什麼，像是呵呵獲取無派工具看法繼續英語敵人居住小時，隱藏版好多無關，屏幕圖書館聰明姓名再次灌水，情緒已經亞洲，檔案教學關鍵顧問填寫，互動。
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
