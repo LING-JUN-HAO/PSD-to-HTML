@@ -20,6 +20,7 @@
 - Day13(2023/10/09)：https://ling-jun-hao.github.io/PSD-to-HTML/NO018/index.html
 - ★★★Day14(2023/10/10)：https://ling-jun-hao.github.io/PSD-to-HTML/NO019/index.html
 - Day14(2023/10/10)：https://ling-jun-hao.github.io/PSD-to-HTML/NO020/index.html
+- Day15(2023/10/11)：https://ling-jun-hao.github.io/PSD-to-HTML/NO021/index.html
 # 補充觀念(Amos老師)
 - Day5(2023/10/02)-CSS_Reset：https://ling-jun-hao.github.io/PSD-to-HTML/CSS_Reset/index.html
 - Day6(2023/10/02)-inline_block基礎：https://ling-jun-hao.github.io/PSD-to-HTML/inline_block-block-inline/index.html
