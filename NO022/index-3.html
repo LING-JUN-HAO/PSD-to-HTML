@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字排版(上)</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .container {
+        width: 1200px;
+        margin: auto;
+        padding: 100px 0;
+    }
+
+    .container h1 {
+        box-sizing: border-box;
+        padding: 0 15px;
+        font-size: 60px;
+        color: #333;
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .container h1::after {
+        content: '';
+        display: block;
+        height: 40px;
+        /* 加上絕對定位後寬度會不見 */
+        width: 100%;
+        bottom: 0;
+        background-color: rgba(238, 238, 238, .6);
+        position: absolute;
+        z-index: -1;
+    }
+
+    .container .txt {
+        box-sizing: border-box;
+        padding: 0 15px;
+        column-count: 2;
+        column-gap: 30px;
+    }
+
+    .container .txt p {
+        line-height: 1.7;
+        padding-bottom: 10px;
+    }
+
+    .container .txt p::first-letter {
+        font-size: 30px;
+        float: left;
+        padding-right: 10px;
+    }
+</style>
+
+<body>
+    <div class="wrap">
+        <div class="container">
+            <h1>Antonio's blog</h1>
+            <div class="txt">
+                <p>隨著科技的進步和社會的發展，舉辦會員專屬的活動已成為許多組織的主要策略。這不僅能夠增強會員的歸屬感，還能夠為他們提供更多的資訊和資源。在這次的預覽開展中，我們特別邀請了多位業界專家和學者，他們將分享他們的見解和經驗，幫助大家更好地理解和應對當前的挑戰。此外，我們還將展示一系列的新技術和產品，希望能夠為大家帶來更多的啟示和靈感。
+                </p>
+                <p>在土地使用和發展上，我們始終堅持環保和可持續的原則。我們認為，只有這樣，我們才能夠真正地為社會和環境做出貢獻。為此，我們與多家研究機構和企業進行了深入的合作，希望能夠共同探索更多的可能性。此外，我們還將舉辦一系列的講座和工作坊，幫助大家更好地理解和實踐這些原則。
+                </p>
+                <p>最後，我們希望能夠通過這次的活動，與大家建立更緊密的聯繫。無論您是我們的會員，還是對我們感興趣的朋友，我們都誠摯地邀請您參加。我們相信，只有通過不斷的交流和合作，我們才能夠真正地實現我們的目標，為大家創建一個更加美好的未來。
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

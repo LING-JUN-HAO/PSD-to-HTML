@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字排版(上)</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .container{
+        width: 1200px;
+        margin: auto;
+        display: flex;
+        padding: 100px 0;
+    }
+    .container h1{
+        width: 400px;
+        text-align: right;
+        box-sizing: border-box;
+        padding: 15px;
+        background-color: #D5C789;
+    }
+    .container h1::after{
+        content: '';
+        display: block;
+        height: 4px;
+        width: 4em;
+        background-color: #000;
+        /* 把多的空間往左邊推 */
+        margin-left: auto;
+    }
+    .container .txt{
+        width: 800px;
+        box-sizing: border-box;
+        padding: 0 15px;
+        /* 欄位數量 */
+        column-count: 2;
+        /* 欄位間距 */
+        column-gap: 30px;
+    }
+    .container .txt p{
+        line-height: 1.7;
+    }
+</style>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <h1>Antonio's blog</h1>
+            <div class="txt">
+                <p>舉辦活動期間，我們將提供會員專屬優惠，請您務必加入我們並關注。在土地使用和發展上，我們高度重視環保和持續性，並希望與各方合作共建。新的合作模式和技術傳輸正在進行中，我們期待與您共同探索未來的可能性。</p>
+                <p>在這次的展覽中，我們特別邀請了多位專家進行評鑒和分享。透過這次的交流，我們希望能夠為大家提供更多的學習和成長機會。無論您是學生、專家還是一般民眾，都能在這裡找到屬於自己的空間和價值。</p>
+                <p>為了更好地服務大家，我們不斷地進行創新和優化。從技術到服務，從合作到發展，我們都希望能夠為大家帶來更好的體驗。請大家持續關注我們，並給予我們寶貴的建議和意見。</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
