@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>文字排版(上)</title>
+    <title>文字排版(中)</title>
     <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,52 +15,45 @@
         margin: 0;
         padding: 0;
         list-style: none;
-        font-family: 'Noto Sans TC', sans-serif;
+        /* font-family: 'Noto Sans TC', sans-serif; */
     }
-
+    .wrap{
+        margin: 100px 0;
+    }
     .container {
+        position: relative;
         width: 1200px;
         margin: auto;
-        padding: 100px 0;
     }
-
     .container h1 {
+        font-size: 90px;
+        width: 400px;
         box-sizing: border-box;
         padding: 0 15px;
-        font-size: 60px;
-        color: #333;
+        text-align: center;
+        color: #aaa;
+        float: right;
         position: relative;
-        margin-bottom: 30px;
     }
-
-    .container h1::after {
+    .container h1::before{
         content: '';
         display: block;
-        height: 40px;
-        /* 加上絕對定位後寬度會不見 */
-        width: 100%;
-        bottom: 0;
-        background-color: rgba(238, 238, 238, .6);
+        /* 當物件轉換成絕對定位會變成block */
         position: absolute;
         z-index: -1;
+        width: 200px;
+        height: 200px;
+        border: 15px solid #eee;
+        bottom: 0;
     }
-
-    .container .txt {
-        box-sizing: border-box;
-        padding: 0 15px;
+    .container .txt{
         column-count: 2;
+        /* 左右各30px的間距 */
         column-gap: 30px;
     }
-
-    .container .txt p {
-        line-height: 1.7;
-        padding-bottom: 10px;
-    }
-
-    .container .txt p::first-letter {
-        font-size: 30px;
-        float: left;
-        padding-right: 10px;
+    .container p {
+        line-height: 1.6;
+        margin-bottom: 1.6em;
     }
 </style>
 
