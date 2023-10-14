@@ -27,6 +27,9 @@
 - Day17(2023/10/13)文字版型4：https://ling-jun-hao.github.io/PSD-to-HTML/NO023/index-1.html
 - Day17(2023/10/13)文字版型5：https://ling-jun-hao.github.io/PSD-to-HTML/NO023/index-2.html
 - Day17(2023/10/13)文字版型6：https://ling-jun-hao.github.io/PSD-to-HTML/NO023/index-3.html
+- Day18(2023/10/14)文字版型7：https://ling-jun-hao.github.io/PSD-to-HTML/NO024/index-1.html
+- Day18(2023/10/14)文字版型8：https://ling-jun-hao.github.io/PSD-to-HTML/NO024/index-2.html
+- Day18(2023/10/14)文字版型9：https://ling-jun-hao.github.io/PSD-to-HTML/NO024/index-3.html
 # 補充觀念(Amos老師)
 - Day5(2023/10/02)-CSS_Reset：https://ling-jun-hao.github.io/PSD-to-HTML/CSS_Reset/index.html
 - Day6(2023/10/02)-inline_block基礎：https://ling-jun-hao.github.io/PSD-to-HTML/inline_block-block-inline/index.html
