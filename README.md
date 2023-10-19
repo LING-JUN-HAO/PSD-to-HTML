@@ -35,8 +35,7 @@
 - Day19(2023/10/14)文字版型11：https://ling-jun-hao.github.io/PSD-to-HTML/NO025/index-2.html
 - Day19(2023/10/14)文字版型12：https://ling-jun-hao.github.io/PSD-to-HTML/NO025/index-3.html
 - Day19(2023/10/14)文字版型13：https://ling-jun-hao.github.io/PSD-to-HTML/NO025/index-4.html
-- Day20(2023/10/19)：https://ling-jun-hao.github.io/PSD-to-HTML/NO026/index.html
-  (結合NO001、NO003、NO005、NO006、NO007、NO011、No25)
+- Day20(2023/10/19)：https://ling-jun-hao.github.io/PSD-to-HTML/NO026/index.html   (結合NO001、NO003、NO005、NO006、NO007、NO011、No25)
 
 ## 補充觀念(Amos老師)
 
