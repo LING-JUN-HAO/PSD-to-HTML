@@ -1,4 +1,5 @@
 # PSD-to-HTML切版練習(Amos老師)
+
 - Day1(2023/09/25)：https://ling-jun-hao.github.io/PSD-to-HTML/NO001/index.html
 - Day2(2023/09/26)：https://ling-jun-hao.github.io/PSD-to-HTML/NO002/index.html
 - Day3(2023/09/27)：https://ling-jun-hao.github.io/PSD-to-HTML/NO003/index.html
@@ -34,7 +35,11 @@
 - Day19(2023/10/14)文字版型11：https://ling-jun-hao.github.io/PSD-to-HTML/NO025/index-2.html
 - Day19(2023/10/14)文字版型12：https://ling-jun-hao.github.io/PSD-to-HTML/NO025/index-3.html
 - Day19(2023/10/14)文字版型13：https://ling-jun-hao.github.io/PSD-to-HTML/NO025/index-4.html
-# 補充觀念(Amos老師)
+  Day20(2023/10/19)：https://ling-jun-hao.github.io/PSD-to-HTML/NO026/index.html
+  (結合NO001、NO003、NO005、NO006、NO007、NO011、No25)
+
+## 補充觀念(Amos老師)
+
 - Day5(2023/10/02)-CSS_Reset：https://ling-jun-hao.github.io/PSD-to-HTML/CSS_Reset/index.html
 - Day6(2023/10/02)-inline_block基礎：https://ling-jun-hao.github.io/PSD-to-HTML/inline_block-block-inline/index.html
 - Day6(2023/10/02)-inline_block實際應用：https://ling-jun-hao.github.io/PSD-to-HTML/inline_block-block-inline/navbar.html

@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>快速版面拼拼樂</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap" rel="stylesheet">
+</head>
+<style>
+    /* CSS Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .banner {
+        width: 100%;
+        height: 500px;
+        background-color: #ccc;
+        /* 角度：115deg，起始顏色&起始位置：#7bf 50%(一半藍色)，結束顏色&結束位置：transparent 50%(一半透明)*/
+        /* 背景位置：center center(X軸 Y軸)，背景大小：100% 100%*/
+        background: linear-gradient(115deg, #7bf 50%,
+                transparent 50%) center center / 100% 100%,
+            url("https://picsum.photos/1200/600/?random=10") right center/auto 100%
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1440px;
+        /* 置中 */
+        margin: auto;
+        height: 100%;
+    }
+
+    .banner-txt {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .banner-txt h1 {
+        font-size: 80px;
+        border-bottom: 1px solid #333;
+        font-weight: 900;
+        padding-bottom: 0.3em;
+        margin-bottom: 0.3em;
+    }
+
+    /* block填滿整個區域((區塊元素) */
+    .banner-txt h1 small {
+        display: block;
+        font-size: 53px;
+        font-weight: 700;
+    }
+
+    .banner-txt h2 {
+        font-size: 50px;
+        font-weight: 700;
+    }
+
+    .banner-txt p {
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    .header-search button svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .main-header {
+        background-color: rgba(0, 0, 0, .7);
+    }
+
+    .main-header .container {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .main-header .logo {
+        width: 100px;
+    }
+
+    .main-header .logo img {
+        width: 100px;
+        height: 100px;
+        border-radius: 180px;
+        /* 垂直置中 */
+        vertical-align: middle;
+    }
+
+    .main-header .main-nav {
+        margin: auto;
+    }
+
+    .main-header .main-nav a::after {
+        content: "";
+        position: absolute;
+        /* 這邊告訴偽元素從左邊到右邊(等於0) */
+        left: 50%;
+        right: 50%;
+        /* -- */
+        /* 這邊是為了讓after不要佔空間(Border一樣會顯示) */
+        height: 0;
+        /* 從底部往上推的距離(負數拉近底部的距離) */
+        bottom: -5px;
+        border-bottom: 1px solid #fff;
+        transition: .3s;
+    }
+
+    .main-header .main-nav a:hover:after {
+        /* 這邊告訴偽元素從左邊到右邊(等於元素寬度) */
+        left: 0;
+        right: 0;
+    }
+
+    .main-header .main-nav a {
+        /* inline的動畫會起不了作用 */
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        padding: 5px 1em;
+        position: relative;
+        transform: translateY(0);
+    }
+
+    .main-header .main-nav a:hover {
+        transform: translateY(-5px);
+    }
+
+    .main-header .header-search {
+        display: flex;
+    }
+
+    .main-header .header-search button,
+    .main-header .header-search input {
+        border: none;
+        background-color: #fff;
+        padding: 5px 10px;
+    }
+
+    .main-header .header-search button:focus,
+    .main-header .header-search input:focus {
+        outline: none;
+    }
+
+    .main-header .header-search button {
+        /* 左上右上右下左下 */
+        border-radius: 0 200px 200px 0;
+    }
+
+    .main-header .header-search input {
+        border-radius: 200px 0 0 200px;
+    }
+
+
+
+    .main-title {
+        margin: 50px 0;
+    }
+
+    .main-title .container {
+        width: 1200px;
+        margin: auto;
+    }
+
+    .main-title .container h1 {
+        flex-shrink: 0;
+        box-sizing: border-box;
+        font-size: 50px;
+        padding-left: 15px;
+        text-align: center;
+        margin-bottom: 0.5em;
+        display: flex;
+    }
+
+    .main-title .container h1::before,
+    .main-title .container h1::after {
+        content: '';
+        display: block;
+        height: 5px;
+        background-color: #aaa;
+        margin: auto;
+        /* 自動填滿Flex剩餘空間(平均分配) */
+        flex-grow: 1;
+    }
+
+    .main-title .container h1::before {
+        margin-right: 0.5em;
+    }
+
+    .main-title .container h1::after {
+        margin-left: 0.5em;
+    }
+
+    .main-title .container .txt {
+        box-sizing: border-box;
+        padding: 15px;
+    }
+
+    .main-title .container .txt p {
+        margin-bottom: 1em;
+    }
+
+    .fish {
+        display: flex;
+        width: 1200px;
+        margin: auto;
+        padding-top: 45px;
+    }
+
+    .fish .item {
+        width: 370px;
+        margin: 0 15px 50px 15px;
+        text-align: center;
+        border: 10px solid #AEDFF7;
+        background-color: #fff;
+        box-shadow: 10px 10px 40px #83C5E9;
+    }
+
+    .fish .item h3 {
+        color: #83C5E9;
+        font-weight: 800;
+        padding: 10px;
+    }
+
+    .fish .item p {
+        color: #999;
+        font-weight: 400;
+        line-height: 1.7;
+        text-align: left;
+    }
+
+    .fish .item .icon {
+        width: 150px;
+        height: 150px;
+        background-color: #fff;
+        margin: -75px auto 0;
+        font-size: 65px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .fish .item:hover svg {
+        /* 執行時間(.2s) 動畫速度線性(linear) infinite(反覆執行)  alternate(動畫播完會反向播放) */
+        animation: shake .2s linear infinite alternate;
+    }
+
+    .fish .item .icon::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-top: 10px solid #AEDFF7;
+        border-right: 10px solid #AEDFF7;
+        border-bottom: 10px solid transparent;
+        border-left: 10px solid transparent;
+        top: -10px;
+        left: -10px;
+        border-radius: 50%;
+        /* 將角度轉45度，讓半圓形朝上 */
+        transform: rotate(-45deg);
+    }
+
+    .fish .item .txt {
+        /* 上 左右 下 */
+        padding: 0 20px 1em;
+    }
+
+    .fish .icon svg {
+        height: 65px;
+        width: 65px;
+    }
+
+    @keyframes shake {
+
+        /* 0%開始的時候 */
+        0% {
+            transform: rotate(-20deg);
+        }
+
+        /* 100%結束的時候 */
+        100% {
+            transform: rotate(20deg);
+        }
+    }
+
+    .student-msg .wrap {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        /* -30deg左上到右下 */
+        background: linear-gradient(-30deg, #fdaecb, #e7597f, #fe8556);
+    }
+
+    .student-msg .container {
+        width: 1200px;
+        margin: auto;
+        display: flex;
+    }
+
+    .student-msg .item {
+        width: 401px;
+        margin: 15px;
+        display: flex;
+        background-color: rgba(255, 255, 255, .6);
+        /* 深一點的灰色 */
+        border: 1px solid #888;
+        /* X軸 Y軸 模糊程度 顏色 */
+        /* box-shadow: 0 10px 30px rgba(160, 0, 0, .5); */
+        box-shadow: 0 10px 30px rgba(0, 0, 0, .3);
+        font-family: 'Noto Sans TC', sans-serif;
+    }
+
+    .student-msg .item .pic {
+        width: 50%;
+    }
+
+    .student-msg .item .pic img {
+        width: 100%;
+        height: 100%;
+        /* 讓圖片按照原比例放大填滿容器而不拉長影響其原本長寬比 */
+        object-fit: cover;
+    }
+
+    .student-msg .item .txt {
+        width: 50%;
+        padding: 20px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .student-msg .item .txt h2 {
+        margin-bottom: 0.4em;
+        font-weight: 500;
+    }
+
+    .student-msg .item .txt p {
+        font-weight: 300;
+    }
+
+    .student-msg .item .txt .btn {
+        line-height: 1.5em;
+        border: 1px solid #ccc;
+        padding: 0 1em;
+        /* 個別調整子元素在交錯軸線的位置 */
+        align-self: flex-end;
+        border-radius: 200px;
+        /* 這是Flex的特性，會將這個元素推到這個容器底部，達到對齊的效果 */
+        margin-top: auto;
+        /* aaa淺灰色 */
+        color: #aaa;
+        font-weight: 600;
+    }
+
+    .student-msg .item .txt .btn:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .force {
+        width: 1200px;
+        display: flex;
+        margin: auto;
+    }
+
+    .force .item {
+        width: 368px;
+        margin: 15px;
+        text-align: center;
+        background-color: #fff;
+        border: 1px solid #000000;
+        transform: translateY(0px);
+        transition: 0.5s;
+    }
+
+    .force .item img {
+        width: 100%;
+        vertical-align: middle;
+    }
+
+    .force .item h2 {
+        border-bottom: 1px solid #888;
+        padding-bottom: .3em;
+        margin-bottom: .3em;
+        font-weight: 900;
+        transition: .25s
+    }
+
+    .force .item p {
+        line-height: 1.6;
+        font-weight: 300;
+        transition: .25s;
+        text-align: left;
+    }
+
+    .force .item .txt {
+        padding: 20px;
+        position: relative;
+        height: calc(100% - 408px);
+    }
+
+    .force .item .txt:before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        left: 0;
+        top: 0;
+        border-top: 50px solid transparent;
+        border-left: 184px solid #fff;
+        border-right: 184px solid #fff;
+        transform: translateY(-100%);
+    }
+
+    .force .item:hover {
+        transform: translateY(-40px);
+    }
+
+    .force .item:hover .txt {
+        background-image: linear-gradient(0deg, #FB8076, #FEB85D)
+    }
+
+    .force .item:hover .txt:before {
+        border-left: 184px solid #FEB85D;
+        border-right: 184px solid #FEB85D;
+    }
+
+    .force .item:hover h2 {
+        color: #fff;
+    }
+
+    .force .item:hover p {
+        color: #fff;
+    }
+
+    .main-footer {
+        padding: 150px 0 0;
+        /* -20deg左下到右上 */
+        background: linear-gradient(-20deg, #3f5494, #08c7a5);
+    }
+    .main-footer .container {
+        display: flex;
+        width: 1300px;
+        margin: auto;
+    }
+    .main-footer .footer-item {
+        width: 0;
+        flex-grow: 1;
+        margin: 0px 20px;
+    }
+    .main-footer .footer-item h4{
+        font-size: 24px;
+        color: #fff;
+        border-bottom: 1px dotted #fff;
+        margin-bottom: .5em;
+        padding-bottom: .5em;
+    }
+    .main-footer .footer-item nav{
+        display: flex;
+        flex-direction: column;
+    }
+    .main-footer .footer-item nav a{
+        color: #fff;
+        text-decoration: none;
+        text-decoration: none;
+        line-height: 1.4;
+        padding: 5px 0;
+    }
+    .main-footer .footer-item nav a svg{
+        margin-right: .4em;
+    }
+    .main-footer .footer-item nav a:hover{
+        color: #fa0;
+    }
+    .main-footer .footer-subs{
+        display: flex;
+        flex-direction: column;
+    }
+    .main-footer .footer-subs form{
+        display: flex;
+        width: 100%;
+        margin: auto 0;
+    }
+    .main-footer .footer-subs input[type="text"],
+    .main-footer .footer-subs input[type="submit"]{
+        border: none;
+        padding: 5px 20px;
+    }
+    .main-footer .footer-subs input[type="text"]{
+        width: 0;
+        flex-grow: 1;
+    }
+    .main-footer .footer-subs input[type="submit"]{
+        background-color: #3e5293;
+        color: #70f6df;
+    }
+    .main-footer .copyright{
+        width: 100%;
+        margin: 150px 0 0;
+        padding: 10px 0;
+        text-align: center;
+        background-color: rgba(0, 0, 0, .7);
+        color: #eee;
+    }
+    .force-group{
+        background-color: #eee;
+    }
+    .section-group{
+        padding: 50px 0;
+    }
+</style>
+
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="https://picsum.photos/300/200/?random=10">
+            </a>
+            <nav class="main-nav">
+                <a href="#">夢幻星空探索</a>
+                <a href="#">秘密的森林冒險</a>
+                <a href="#">都市傳說與迷思</a>
+                <a href="#">時間旅行的奧秘</a>
+            </nav>
+            <form class="header-search">
+                <input type="search" name="" id="">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path
+                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                    </svg>
+                </button>
+            </form>
+        </div>
+    </header>
+    <div class="banner">
+        <div class="container">
+            <div class="banner-txt">
+                <h1>
+                    凌俊豪
+                    <small>
+                        城市計算研究室
+                    </small>
+                </h1>
+                <h2>
+                    資訊管理系
+                </h2>
+                <p>
+                    F110118103@nkust.edu.tw
+                    <br>
+                    0909-510-212
+                    <br>
+                    82245 高雄市燕巢區大學號1號
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="section-gruop fish-group">
+        <div class="main-title">
+            <div class="container">
+                <h1>破格式設計</h1>
+                <div class="txt">
+                    <p>
+                        跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="fish">
+            <div class="item">
+                <div class="icon">
+                    <svg fill="#AEDFF7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <path
+                            d="M413.5 237.5c-28.2 4.8-58.2-3.6-80-25.4l-38.1-38.1C280.4 159 272 138.8 272 117.6V105.5L192.3 62c-5.3-2.9-8.6-8.6-8.3-14.7s3.9-11.5 9.5-14l47.2-21C259.1 4.2 279 0 299.2 0h18.1c36.7 0 72 14 98.7 39.1l44.6 42c24.2 22.8 33.2 55.7 26.6 86L503 183l8-8c9.4-9.4 24.6-9.4 33.9 0l24 24c9.4 9.4 9.4 24.6 0 33.9l-88 88c-9.4 9.4-24.6 9.4-33.9 0l-24-24c-9.4-9.4-9.4-24.6 0-33.9l8-8-17.5-17.5zM27.4 377.1L260.9 182.6c3.5 4.9 7.5 9.6 11.8 14l38.1 38.1c6 6 12.4 11.2 19.2 15.7L134.9 484.6c-14.5 17.4-36 27.4-58.6 27.4C34.1 512 0 477.8 0 435.7c0-22.6 10.1-44.1 27.4-58.6z" />
+                    </svg>
+                </div>
+                <div class="txt">
+                    <h3>科技的未來視野</h3>
+                    <p>隨著科技的快速發展，我們正邁向一個前所未有的數字時代。從人工智慧到量子計算，新的技術不斷地重塑我們的生活方式和工作方式。未來，我們可以期待更多的創新和突破，為我們帶來更多的可能性和機會。</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="icon">
+                    <svg fill="#AEDFF7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path
+                            d="M323.8 34.8c-38.2-10.9-78.1 11.2-89 49.4l-5.7 20c-3.7 13-10.4 25-19.5 35l-51.3 56.4c-8.9 9.8-8.2 25 1.6 33.9s25 8.2 33.9-1.6l51.3-56.4c14.1-15.5 24.4-34 30.1-54.1l5.7-20c3.6-12.7 16.9-20.1 29.7-16.5s20.1 16.9 16.5 29.7l-5.7 20c-5.7 19.9-14.7 38.7-26.6 55.5c-5.2 7.3-5.8 16.9-1.7 24.9s12.3 13 21.3 13L448 224c8.8 0 16 7.2 16 16c0 6.8-4.3 12.7-10.4 15c-7.4 2.8-13 9-14.9 16.7s.1 15.8 5.3 21.7c2.5 2.8 4 6.5 4 10.6c0 7.8-5.6 14.3-13 15.7c-8.2 1.6-15.1 7.3-18 15.1s-1.6 16.7 3.6 23.3c2.1 2.7 3.4 6.1 3.4 9.9c0 6.7-4.2 12.6-10.2 14.9c-11.5 4.5-17.7 16.9-14.4 28.8c.4 1.3 .6 2.8 .6 4.3c0 8.8-7.2 16-16 16H286.5c-12.6 0-25-3.7-35.5-10.7l-61.7-41.1c-11-7.4-25.9-4.4-33.3 6.7s-4.4 25.9 6.7 33.3l61.7 41.1c18.4 12.3 40 18.8 62.1 18.8H384c34.7 0 62.9-27.6 64-62c14.6-11.7 24-29.7 24-50c0-4.5-.5-8.8-1.3-13c15.4-11.7 25.3-30.2 25.3-51c0-6.5-1-12.8-2.8-18.7C504.8 273.7 512 257.7 512 240c0-35.3-28.6-64-64-64l-92.3 0c4.7-10.4 8.7-21.2 11.8-32.2l5.7-20c10.9-38.2-11.2-78.1-49.4-89zM32 192c-17.7 0-32 14.3-32 32V448c0 17.7 14.3 32 32 32H96c17.7 0 32-14.3 32-32V224c0-17.7-14.3-32-32-32H32z" />
+                    </svg>
+                </div>
+                <div class="txt">
+                    <h3>環保的重要性</h3>
+                    <p> 隨著全球氣候變化的威脅日益加劇，環保已經成為我們不能忽視的議題。每個人都有責任採取行動，減少碳足跡，並保護我們珍貴的地球。通過簡單的日常習慣，如減少浪費、回收和使用可再生能源，我們都可以為建立一個更綠色、更可持續的未來做出貢獻。
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="icon">
+                    <svg fill="#AEDFF7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                        <path
+                            d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z" />
+                    </svg>
+                </div>
+                <div class="txt">
+                    <h3>藝術與心靈的連接</h3>
+                    <p>藝術不僅是一種表達方式，更是一種與內心深處的自我連接的方式。它可以治愈、啟發並帶給我們力量。無論是音樂、繪畫還是舞蹈，藝術都能夠觸動我們的情感，幫助我們理解自己和這個世界。當我們沉浸在藝術中時，我們可以找到安慰、靈感和希望。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section-group force-group">
+        <div class="main-title">
+            <div class="container">
+                <h1>人員介紹卡片</h1>
+                <div class="txt">
+                    <p>
+                        跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="force">
+            <div class="item">
+                <img src="https://picsum.photos/300/300/?random=10">
+                <div class="txt">
+                    <h2>凌俊豪</h2>
+                    <p>凌俊豪是我們團隊的前端開發工程師，擅長使用React和Vue建立高效能的使用者介面。他也是一個熱衷於學習新技術和分享知識的人</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/300/300/?random=20">
+                <div class="txt">
+                    <h2>Antonio</h2>
+                    <p>Antonio 是我們團隊的 UI/UX 設計師。他擁有出色的設計感和對使用者體驗的深刻理解，能夠創造出欣賞和吸引人的設計</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://picsum.photos/300/300/?random=30">
+                <div class="txt">
+                    <h2>豪哥</h2>
+                    <p>豪哥是我們團隊的經理，他擁有豐富的專案管理經驗和出色的團隊專案協作能力，能夠保證專案的順利進行和按時完成</p>
+                </div>
+            </div>
+        </div>
+        <div class="main-title">
+            <div class="container">
+                <h1>通用橫式版面</h1>
+                <div class="txt">
+                    <p>
+                        跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。跟平常不太一樣的設計方式，跳脫以往方框的設計思維，十分有趣。
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="student-msg">
+            <div class="container">
+                <!-- item 1 -->
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/400/400/?random=10">
+                    </div>
+                    <div class="txt">
+                        <h2>探索網頁設計: 奧秘之旅</h2>
+                        <p>
+                            網頁設計不僅僅是代碼和圖像的組合，它是一門藝術，一門能夠將想法轉化為可視、可互動的現實的技術。
+                        </p>
+                        <a href="#" class="btn">more</a>
+                    </div>
+                </div>
+                <!-- item 2 -->
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/400/400/?random=11">
+                    </div>
+                    <div class="txt">
+                        <h2>編碼力量: 打造夢想網站</h2>
+                        <p>
+                            通過學習和實踐編碼，我們可以創建功能強大、外觀美觀的網站，並在網路世界中留下自己的印記。
+                        </p>
+                        <a href="#" class="btn">more</a>
+                    </div>
+                </div>
+                <!-- item 3 -->
+                <div class="item">
+                    <div class="pic">
+                        <img src="https://picsum.photos/400/400/?random=12">
+                    </div>
+                    <div class="txt">
+                        <h2>掌握CSS: 樣式的魔法</h2>
+                        <p>
+                            CSS不僅僅是使網站看起來更美觀，它是一個強大的工具，能夠使網站變得生動、易用並且吸引人。
+                        </p>
+                        <a href="#" class="btn">more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-footer">
+        <div class="container">
+            <div class="footer-item">
+                <h4>關於切版課程</h4>
+                <nav>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path fill="white"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>課程目標</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path fill="white"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>辦學理念</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path fill="white"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>課程宗旨</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>課程列表</h4>
+                <nav>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path fill="white"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>網頁切版入門班</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path fill="white"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>RWD網頁深入理解</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path fill="white"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>CSS3互動動畫設計</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path fill="white"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>Boostrap框架實務</a>
+                </nav>
+            </div>
+            <div class="footer-item">
+                <h4>服務項目</h4>
+                <nav>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path fill="white"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>網頁建置顧問</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path fill="white"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>網站設計建置</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path fill="white"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>網站規劃</a>
+                    <a href="#"> <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                            <path fill="white"
+                                d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>企業教育訓練</a>
+                </nav>
+            </div>
+            <div class="footer-item footer-subs">
+                <h4>訂閱電子報</h4>
+                <form>
+                    <input type="text" name="">
+                    <input type="submit" name="訂閱">
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright &copy; 2023
+            Antonio 網頁切版教學
+        </div>
+    </div>
+</body>
+
+</html>
